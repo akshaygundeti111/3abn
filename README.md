@@ -4,73 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate to 3ABN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
+    * {
+      box-sizing: border-box;
     }
-    .container {
-      max-width: 400px;
-      margin: 50px auto;
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      background-color: #f1f5f9;
+      color: #333;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: 600;
+      color: #005da4;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 100px);
+      padding: 40px 20px;
+    }
+    .form-container {
+      background: #ffffff;
       padding: 30px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-width: 450px;
+      width: 100%;
     }
     h2 {
-      margin-bottom: 20px;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #005da4;
     }
     input, select, button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
     button {
-      background-color: #2574db;
+      background-color: #005da4;
       color: white;
       border: none;
+      font-weight: 600;
       cursor: pointer;
+      transition: background 0.3s;
     }
     button:hover {
-      background-color: #1a5bbf;
+      background-color: #004b87;
     }
-    .logo {
-      font-size: 26px;
-      color: #2574db;
-      font-weight: bold;
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="logo">3ABN</div>
-  <div class="container">
-    <h2>Donate to 3ABN</h2>
-    <form id="donationForm">
-      <input type="text" id="name" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email Address" required />
-      <input type="tel" id="phone" placeholder="Phone Number" required />
-      <select id="area" required>
-        <option value="">Select Donation Area</option>
-        <option>Child Welfare</option>
-        <option>Education</option>
-        <option>Medical Help</option>
-      </select>
-      <input type="number" id="amount" placeholder="Donation Amount (USD)" required />
-      <button type="submit">Proceed to Payment</button>
-    </form>
-  </div>
+  <header>
+    <div class="logo">3ABN</div>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <h2>Make a Donation</h2>
+      <form id="donationForm">
+        <input type="text" id="name" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="tel" id="phone" placeholder="Phone Number" required />
+        <select id="area" required>
+          <option value="">Select Donation Area</option>
+          <option>Child Welfare</option>
+          <option>Education</option>
+          <option>Medical Help</option>
+        </select>
+        <input type="number" id="amount" placeholder="Donation Amount (USD)" required />
+        <button type="submit">Proceed to PayPal</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 3ABN. All Rights Reserved.
+  </footer>
 
   <script>
     document.getElementById("donationForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
-      // Collect form values if needed (optional)
       const name = document.getElementById("name").value;
       alert("Thank you, " + name + "! Redirecting to PayPal...");
 
-      // Redirect to PayPal donation page
       window.location.href = "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=UYJVUZRSBUCYY&source=url&ssrt=1744192747654";
     });
   </script>
