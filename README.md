@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Donate to 3ABN</title>
-  <link rel="icon" href="https://3abn.org/sites/all/themes/zen3abn/logo.png" />
+  <link rel="icon" href="3abn-logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
@@ -16,19 +15,20 @@
     }
 
     header {
-      background-color: #0077C8;
+      background-color: #ffffff;
       padding: 15px 20px;
       display: flex;
       align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     header img {
-      height: 50px;
+      height: 60px;
       margin-right: 15px;
     }
 
     header span {
-      color: #fff;
+      color: #0077C8;
       font-size: 24px;
       font-weight: bold;
     }
@@ -84,7 +84,7 @@
 <body>
 
   <header>
-    <img src="https://3abn.org/sites/all/themes/zen3abn/logo.png" alt="3ABN Logo">
+    <img src="3abn-logo.png" alt="3ABN Logo">
     <span>3ABN</span>
   </header>
 
@@ -111,7 +111,7 @@
       <label for="amount">Donation Amount (USD)</label>
       <input type="number" id="amount" required>
 
-      <button type="submit" class="btn">Proceed to PayPal</button>
+      <button type="submit" class="btn">Proceed to Payment</button>
     </form>
   </div>
 
@@ -119,7 +119,7 @@
     document.getElementById("donationForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      // Redirect to PayPal
+      // Redirect to PayPal or payment gateway
       window.location.href = "https://www.paypal.com/donate/?hosted_button_id=UYJVUZRSBUCYY";
     });
   </script>
