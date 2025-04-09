@@ -3,65 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>Donate to 3ABN</title>
-  <link rel="icon" type="image/png" href="https://3abn.org/sites/all/themes/zen3abn/logo.png">
+  <link rel="icon" href="https://3abn.org/sites/all/themes/zen3abn/logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Open Sans', Arial, sans-serif;
-      background-color: #ffffff;
-      color: #222;
+      background-color: #f2f7fc;
       margin: 0;
       padding: 0;
     }
 
     header {
       background-color: #0077C8;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
+      padding: 15px 20px;
       display: flex;
       align-items: center;
     }
 
-    .logo img {
-      height: 60px;
-      margin-right: 10px;
+    header img {
+      height: 50px;
+      margin-right: 15px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
+    header span {
+      color: #fff;
+      font-size: 24px;
       font-weight: bold;
     }
 
     .container {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #fff;
       border-radius: 10px;
-      background-color: #f9f9f9;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
     h2 {
       text-align: center;
       color: #0077C8;
+      margin-bottom: 20px;
     }
 
     label {
+      font-weight: bold;
       display: block;
       margin-top: 15px;
-      font-weight: bold;
     }
 
     input, select {
@@ -70,18 +59,20 @@
       margin-top: 5px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 14px;
     }
 
     .btn {
+      margin-top: 20px;
       background-color: #0077C8;
       color: white;
-      padding: 12px;
-      width: 100%;
       border: none;
-      border-radius: 6px;
-      margin-top: 20px;
+      padding: 12px;
       font-size: 16px;
+      width: 100%;
+      border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
     }
 
     .btn:hover {
@@ -92,54 +83,43 @@
 <body>
 
   <header>
-    <div class="logo">
-      <img src="https://3abn.org/sites/all/themes/zen3abn/logo.png" alt="3ABN Logo">
-      <span style="color: white; font-size: 22px; font-weight: bold;">3ABN</span>
-    </div>
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Watch</a>
-      <a href="#">Donate</a>
-      <a href="#">Schedule</a>
-      <a href="#">Contact</a>
-    </nav>
+    <img src="https://3abn.org/sites/all/themes/zen3abn/logo.png" alt="3ABN Logo">
+    <span>3ABN</span>
   </header>
 
   <div class="container">
-    <h2>Donate to 3ABN</h2>
+    <h2>Make a Donation</h2>
     <form id="donationForm">
-      <label for="name">Full Name:</label>
+      <label for="name">Full Name</label>
       <input type="text" id="name" required>
 
-      <label for="email">Email Address:</label>
+      <label for="email">Email Address</label>
       <input type="email" id="email" required>
 
-      <label for="phone">Phone Number:</label>
+      <label for="phone">Phone Number</label>
       <input type="tel" id="phone" required>
 
-      <label for="area">Donation Area:</label>
+      <label for="area">Select Donation Area</label>
       <select id="area" required>
-        <option value="">-- Select --</option>
-        <option value="Child Welfare">Child Welfare</option>
+        <option value="">-- Select Donation Area --</option>
         <option value="TV Ministry">TV Ministry</option>
-        <option value="Global Outreach">Global Outreach</option>
+        <option value="Evangelism">Evangelism</option>
+        <option value="Children's Ministry">Children's Ministry</option>
       </select>
 
-      <label for="amount">Donation Amount (USD):</label>
-      <input type="number" id="amount" min="1" required>
+      <label for="amount">Donation Amount (USD)</label>
+      <input type="number" id="amount" required>
 
-      <button type="submit" class="btn">Proceed to Payment</button>
+      <button type="submit" class="btn">Proceed to PayPal</button>
     </form>
   </div>
 
   <script>
     document.getElementById("donationForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      
-      // You could log details or store here
 
       // Redirect to PayPal
-      window.location.href = "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=UYJVUZRSBUCYY&source=url&ssrt=1744192747654";
+      window.location.href = "https://www.paypal.com/donate/?hosted_button_id=UYJVUZRSBUCYY";
     });
   </script>
 </body>
