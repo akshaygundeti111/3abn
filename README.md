@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>3ABN Donation Form</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donate to 3ABN</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 40px; background: #f7f7f7; }
-    form { background: #fff; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    label { display: block; margin-top: 15px; font-weight: bold; }
-    input, select, button { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
-    button { background-color: #0070ba; color: white; border: none; cursor: pointer; }
-    button:hover { background-color: #005ea6; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    button {
+      background-color: #2574db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1a5bbf;
+    }
+    .logo {
+      font-size: 26px;
+      color: #2574db;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-
-  <h2 style="text-align:center;">Donate to 3ABN</h2>
-
-  <form id="donationForm">
-    <label for="name">Full Name:</label>
-    <input type="text" name="name" required>
-
-    <label for="email">Email Address:</label>
-    <input type="email" name="email" required>
-
-    <label for="phone">Phone Number:</label>
-    <input type="text" name="phone">
-
-    <label for="donationArea">Donation Area:</label>
-    <select name="donationArea">
-      <option value="Child Welfare">Child Welfare</option>
-      <option value="Women Support">Women Support</option>
-      <option value="Elderly Aid">Elderly Aid</option>
-      <option value="War Relief">War Relief</option>
-    </select>
-
-    <label for="amount">Donation Amount (USD):</label>
-    <input type="number" name="amount" required>
-
-    <button type="submit">Proceed to Payment</button>
-  </form>
+  <div class="logo">3ABN</div>
+  <div class="container">
+    <h2>Donate to 3ABN</h2>
+    <form id="donationForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
+      <select id="area" required>
+        <option value="">Select Donation Area</option>
+        <option>Child Welfare</option>
+        <option>Education</option>
+        <option>Medical Help</option>
+      </select>
+      <input type="number" id="amount" placeholder="Donation Amount (USD)" required />
+      <button type="submit">Proceed to Payment</button>
+    </form>
+  </div>
 
   <script>
-    document.getElementById('donationForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    document.getElementById("donationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
 
-      // Later: You can add a POST to a NetSuite RESTlet here.
+      // Collect form values if needed (optional)
+      const name = document.getElementById("name").value;
+      alert("Thank you, " + name + "! Redirecting to PayPal...");
 
       // Redirect to PayPal donation page
-      window.location.href = "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=UYJVUZRSBUCYY&source=url&ssrt=1744178200616";
+      window.location.href = "https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=UYJVUZRSBUCYY&source=url&ssrt=1744192747654";
     });
   </script>
-
 </body>
 </html>
